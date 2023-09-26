@@ -1,0 +1,65 @@
+.education-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-content {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        .icon {
+            height: 50px;
+            width: 40px;
+        }
+    }
+}
+
+.school-list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0 !important;
+
+    .school-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+}
+
+.school-form {
+    width: 350px;
+    height: 100%;
+
+    input {
+        width: 100%;
+    }
+
+    .form-btns {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .delete-btn {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .side-btns {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+    }
+}
+
+.add-school {
+    margin-left: 35%;
+}

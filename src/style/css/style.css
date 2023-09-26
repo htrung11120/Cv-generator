@@ -1,0 +1,202 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-bar {
+  margin-top: 60px;
+  margin-left: 120px;
+  width: 350px;
+  max-height: 100%;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.nav .clear-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.education-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.education-header .header-content {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.education-header .header-content .icon {
+  height: 50px;
+  width: 40px;
+}
+
+.school-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0 !important;
+}
+.school-list .school-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.school-form {
+  width: 350px;
+  height: 100%;
+}
+.school-form input {
+  width: 100%;
+}
+.school-form .form-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.school-form .form-btns .delete-btn {
+  display: flex;
+  flex-direction: row;
+}
+.school-form .form-btns .side-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.add-school {
+  margin-left: 35%;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+.header-content .icon {
+  width: 40px;
+  height: 50px;
+}
+
+.work-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  list-style-type: none;
+}
+.work-list .work-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-work {
+  margin-left: 30%;
+}
+
+.side-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.form-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-btn {
+  display: flex;
+  flex-direction: row;
+}
+
+input {
+  width: 100%;
+}
+
+.side-bar {
+  width: 350px;
+  height: 100%;
+}
+
+body {
+  background-color: #dbdbdb;
+}/*# sourceMappingURL=style.css.map */
