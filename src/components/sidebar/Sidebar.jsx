@@ -1,7 +1,7 @@
 import NavBar from "./Nav"
 import PersonalInfor from "./PersonaInfor"
 import Education from "./Education"
-import Experience from "./experience"
+import Experience from "./Experience"
 export default function SideBar() {
 
     return (
