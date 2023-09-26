@@ -1,5 +1,5 @@
-import CvContainer from './component/CvContainer'
-import './dist/css/style.css'
+import CvContainer from './components/CvContainer'
+import './styles/css/style.css'
 
 function App() {
 
