@@ -41,6 +41,10 @@
 
 .add-work {
     margin-left: 30%;
+    border: none;
+    width: 230px;
+    height: 50px;
+    border-radius: 10px;
 
 }
 
@@ -63,6 +67,14 @@
     flex-direction: row;
 }
 
-input {
+input,
+.input {
     width: 100%;
+    width: 500px;
+    border-radius: 10px;
+    background-color: transparent;
+    border: transparent;
+    padding-left: 10px;
+    font-size: 20px;
+    color: grey;
 }

@@ -14,26 +14,26 @@ export default function SchoolEditForm({ changeShowform }) {
                 <label htmlFor="school">
                     <h4>School Name:</h4>
                 </label>
-                <input type="text" className="school" id="school" />
+                <input type="text" className="school input" id="school" value="A Good University" />
             </div>
             <div className="school-form-item">
                 <label htmlFor="school">
                     <h4>Degree:</h4>
                 </label>
-                <input type="text" className="degree" id="degree" />
+                <input type="text" className="degree input" id="degree" value="Bachelor" />
             </div>
             <div className="school-form-item">
                 <div className="start-date">
                     <label htmlFor="start-date">
                         <h4>Start Date:</h4>
                     </label>
-                    <input type="text" className="start-date-input" id="start-date-input" />
+                    <input type="date" className="start-date-input input" id="start-date-input"/>
                 </div>
                 <div className="end-date">
                     <label htmlFor="end-date">
                         <h4>End Date:</h4>
                     </label>
-                    <input type="text" className="end-date-input" id="end-date-input" />
+                    <input type="date" className="end-date-input input" id="end-date-input" />
                 </div>
             </div>
 
@@ -41,7 +41,7 @@ export default function SchoolEditForm({ changeShowform }) {
                 <label htmlFor="location">
                     <h4>Location:</h4>
                 </label>
-                <input type="text" className="location" id="location" />
+                <input type="text" className="location input" id="location" value="somewhere"/>
             </div>
             <div className="form-btns">
                 <div className="delete-btn">

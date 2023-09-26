@@ -1,0 +1,11 @@
+@import"./resume/header";
+@import"./resume/resume-body";
+
+.resume-page {
+    width: 800px;
+    padding:20px 60px;
+    height: auto;
+    box-shadow: -1px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 0px 5px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 0px 5px 1px rgba(0, 0, 0, 0.75);
+}

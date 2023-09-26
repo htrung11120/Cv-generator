@@ -1,5 +1,25 @@
+.form-infor-header {
+    padding-bottom: 15px;
+}
 
 .form-item {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+
+    .input {
+        border-radius: 10px;
+        background-color: transparent;
+        border: transparent;
+        padding-left: 10px;
+        font-size: 20px;
+        color: grey;
+    }
+}
+
+.applicant-form-infor {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
 }

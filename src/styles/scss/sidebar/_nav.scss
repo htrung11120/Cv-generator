@@ -1,20 +1,66 @@
+$background-color: white;
+
+@mixin buttonStyle {
+    background-color: $background-color;
+    border-radius: 15px;
+    width: 250px;
+    height: 50px;
+    cursor: pointer;
+}
+
+;
+
+@mixin buttonShadown {
+    box-shadow: -5px 5px 5px -1px rgba(0, 0, 0, 0.29);
+    -webkit-box-shadow: -5px 5px 5px -1px rgba(0, 0, 0, 0.29);
+    -moz-box-shadow: -5px 5px 5px -1px rgba(0, 0, 0, 0.29);
+}
+
+;
 
 .side-bar {
-    margin-top: 60px;
-    margin-left: 120px;
     width: 350px;
     max-height: 100%;
+
 }
+
+;
 
 .nav {
     display: flex;
     flex-direction: row;
     gap: 50px;
-
+    padding: 30px 0;
 
     .clear-btn {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
         gap: 5px;
+        @include buttonStyle;
+        @include buttonShadown;
+
+        .trash-icon {
+            width: 20px;
+            height: auto;
+        }
+
+        .clear-text {
+            font-size: 18px;
+        }
     }
+}
+
+.sample-cv {
+    @include buttonStyle;
+    font-size: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include buttonShadown;
+
+
 }

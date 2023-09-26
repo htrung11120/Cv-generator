@@ -1,0 +1,59 @@
+.resume-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .resume-education {
+        display: flex;
+        flex-direction: column;
+        padding-top: 30px;
+        padding-bottom: 50px;
+
+        .resume-education-header {
+            align-self: center;
+            padding-bottom: 25px;
+
+        }
+
+        .school-infor-list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+            gap: 60px;
+
+        
+        }
+    }
+
+    .resume-work {
+        display: flex;
+        flex-direction: column;
+
+        .resume-work-header {
+            align-self: center;
+            padding-bottom: 25px;
+
+        }
+
+        .work-infor-list {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style-type: none;
+            gap: 60px;
+            padding: 0;
+
+        }
+    }
+
+}
+
+.school-list-item,
+.work-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+}

@@ -51,14 +51,32 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
+.form-infor-header {
+  padding-bottom: 15px;
+}
+
 .form-item {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+.form-item .input {
+  border-radius: 10px;
+  background-color: transparent;
+  border: transparent;
+  padding-left: 10px;
+  font-size: 20px;
+  color: grey;
+}
+
+.applicant-form-infor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 30px;
 }
 
 .side-bar {
-  margin-top: 60px;
-  margin-left: 120px;
   width: 350px;
   max-height: 100%;
 }
@@ -67,11 +85,44 @@ p, h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: row;
   gap: 50px;
+  padding: 30px 0;
 }
 .nav .clear-btn {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 5px;
+  background-color: white;
+  border-radius: 15px;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: -5px 5px 5px -1px rgba(0, 0, 0, 0.29);
+  -webkit-box-shadow: -5px 5px 5px -1px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: -5px 5px 5px -1px rgba(0, 0, 0, 0.29);
+}
+.nav .clear-btn .trash-icon {
+  width: 20px;
+  height: auto;
+}
+.nav .clear-btn .clear-text {
+  font-size: 18px;
+}
+
+.sample-cv {
+  background-color: white;
+  border-radius: 15px;
+  width: 250px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -5px 5px 5px -1px rgba(0, 0, 0, 0.29);
+  -webkit-box-shadow: -5px 5px 5px -1px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: -5px 5px 5px -1px rgba(0, 0, 0, 0.29);
 }
 
 .education-header {
@@ -115,6 +166,7 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-top: 20px;
 }
 .school-form .form-btns .delete-btn {
   display: flex;
@@ -128,6 +180,20 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .add-school {
   margin-left: 35%;
+  border: none;
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+}
+
+.school-form-item .input {
+  width: 500px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: transparent;
+  padding-left: 10px;
+  font-size: 20px;
+  color: grey;
 }
 
 .experience {
@@ -167,6 +233,10 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .add-work {
   margin-left: 30%;
+  border: none;
+  width: 230px;
+  height: 50px;
+  border-radius: 10px;
 }
 
 .side-btns {
@@ -188,15 +258,121 @@ p, h1, h2, h3, h4, h5, h6 {
   flex-direction: row;
 }
 
-input {
+input,
+.input {
   width: 100%;
+  width: 500px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: transparent;
+  padding-left: 10px;
+  font-size: 20px;
+  color: grey;
 }
 
 .side-bar {
-  width: 350px;
+  width: 500px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resume-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.resume-header .applicant-contact-infor {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.resume-header .applicant-contact-infor .phone,
+.resume-header .applicant-contact-infor .email,
+.resume-header .applicant-contact-infor .location {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.resume-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.resume-body .resume-education {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.resume-body .resume-education .resume-education-header {
+  align-self: center;
+  padding-bottom: 25px;
+}
+.resume-body .resume-education .school-infor-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  gap: 60px;
+}
+.resume-body .resume-work {
+  display: flex;
+  flex-direction: column;
+}
+.resume-body .resume-work .resume-work-header {
+  align-self: center;
+  padding-bottom: 25px;
+}
+.resume-body .resume-work .work-infor-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  gap: 60px;
+  padding: 0;
+}
+
+.school-list-item,
+.work-list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.resume-page {
+  width: 800px;
+  padding: 20px 60px;
+  height: auto;
+  box-shadow: -1px 0px 5px 1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -1px 0px 5px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 0px 5px 1px rgba(0, 0, 0, 0.75);
 }
 
 body {
   background-color: #dbdbdb;
+  width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+}
+
+.cv-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 60px;
+  margin-left: 120px;
+  display: flex;
+  flex-direction: row;
+  gap: 250px;
+  padding-bottom: 100px;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
