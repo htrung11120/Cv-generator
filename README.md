@@ -1,5 +1,5 @@
 # React + Vite
-#priviewSite:https://github.com/htrung11120/Cv-generator
+#Previewsite:https://github.com/htrung11120/Cv-generator
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
