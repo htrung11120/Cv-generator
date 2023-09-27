@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import visibilityIcon from '../assets/visibility.svg';
-import invisibilityIcon from '../assets/invisibility.svg';
 import WorkEditForm from './WorkEditForm';
+import trashIcon from '../assets/delete.svg'; // Import your trash icon
 
 export default function Work({ workData, updateWorkData }) {
-
     const [showForm, setShowForm] = useState(false);
-
-    const toggleVisibility = (id) => {
-        const updatedWorkData = workData.map((work) =>
-            work.id === id ? { ...work, visible: !work.visible } : work
-        );
-        updateWorkData(updatedWorkData);
-    };
 
     const handleFormToggle = () => {
         setShowForm((prevShowForm) => !prevShowForm);
+    };
+
+    const handleDelete = (id) => {
+        // Implement the delete functionality here
+        // You should update the 'workData' and 'updateWorkData' accordingly
+        const updatedWorkData = workData.filter((work) => work.id !== id);
+        updateWorkData(updatedWorkData);
     };
 
     return (
@@ -28,11 +26,9 @@ export default function Work({ workData, updateWorkData }) {
                         {workData.map((work) => (
                             <li key={work.id} className="work-item">
                                 <h2 className="work-name">{work.companyName}</h2>
-                                <img
-                                    src={work.visible ? visibilityIcon : invisibilityIcon}
-                                    onClick={() => toggleVisibility(work.id)}
-                                    alt="Toggle Visibility"
-                                />
+                                <button onClick={() => handleDelete(work.id)}>
+                                    <img src={trashIcon} alt="Delete" /> {/* Use the trash icon here */}
+                                </button>
                             </li>
                         ))}
                     </ul>

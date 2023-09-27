@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 
 export default function SchoolEditForm({ changeShowform, educationData, updateEducationData }) {
-    const [cancel, setCancel] = useState(true);
+ 
 
     const handleCancelClick = () => {
         setCancel(true);
@@ -24,35 +25,44 @@ export default function SchoolEditForm({ changeShowform, educationData, updateEd
         });
     };
 
-    const handleSaveClick = (id) => {
-        // Replace the sample values with form input values
-        const updatedEducationData = educationData.map((school) =>
-            school.id === id
-                ? {
-                    ...school,
-                    schoolName: schoolData.schoolName,
-                    schoolDegree: schoolData.degree, // Use the selected degree value
-                    date: `${schoolData.startDate} - ${schoolData.endDate}`,
-                    location: schoolData.location,
-                }
-                : school
-        );
+    const handleSaveClick = () => {
+        const newData = {
+            id: uuid(),
+            schoolName: schoolData.schoolName,
+            schoolDegree: schoolData.degree, // Use the selected degree value
+            date: `${schoolData.startDate} - ${schoolData.endDate}`,
+            location: schoolData.location,
+        };
 
-        // Call the updateEducationData callback to send the updated data to CvContainer
+        const updatedEducationData = [...educationData, newData];
+
         updateEducationData(updatedEducationData);
 
-        // Close the form
+        setSchoolData({
+            schoolName: '',
+            degree: '', // Clear the selected degree
+            startDate: '',
+            endDate: '',
+            location: '',
+        });
+
         changeShowform(false);
     };
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+    }
+
     return (
-        <form className="school-form">
+        <form onSubmit={onSubmit} className="school-form">
             <div className="school-form-item">
                 <label htmlFor="school">
                     <h4>School Name:</h4>
                 </label>
                 <input
                     type="text"
+                    {...register("schoolName", { required: true, maxLength: 5 })}
                     className="school input"
                     id="school"
                     name="schoolName"
@@ -81,7 +91,8 @@ export default function SchoolEditForm({ changeShowform, educationData, updateEd
                         <h4>Start Date:</h4>
                     </label>
                     <input
-                        type="date"
+                        type='number'
+
                         className="start-date-input input"
                         id="start-date-input"
                         name="startDate"
@@ -117,14 +128,14 @@ export default function SchoolEditForm({ changeShowform, educationData, updateEd
                 />
             </div>
             <div className="form-btns">
-       
+
                 <div className="side-btns">
                     <p className="Cancel-btn" onClick={handleCancelClick}>
                         Cancel
                     </p>
-                    <p className="Save-btn" onClick={() => handleSaveClick(educationData[0].id)}>
+                    <button className="Save-btn" type='submit' onClick={() => handleSaveClick()}>
                         Save
-                    </p>
+                    </button>
                 </div>
             </div>
         </form>
