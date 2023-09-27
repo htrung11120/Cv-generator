@@ -16,7 +16,7 @@ export default function Experience({ workData, updateWorkData }) {
             <div className="experience-header">
                 <div className="header-content">
                     <img src={workIcon} alt="" className='icon' />
-                    <h1>Experience</h1>
+                    <h3>Experience</h3>
                 </div>
                 <div className="arrow">
                     <img src={arrow} alt="Toggle" onClick={changeArrow} />

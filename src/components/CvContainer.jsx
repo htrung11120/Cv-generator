@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import NavBar from './sidebar/Nav';
 import PersonalInfor from './sidebar/PersonaInfor';
 import Education from './sidebar/Education';
 import Experience from './sidebar/Experience';
@@ -24,15 +23,15 @@ export default function CvContainer() {
     const [educationData, setEducationData] = useState([
         {
             id: uuid(),
-            schoolName: 'Londonss',
+            schoolName: ' Strayer University',
             visible: false,
             date: '2021-2020',
-            location: 'Ga, lake city',
+            location: 'uk, lake city',
             schoolDegree: 'bachelor',
         },
         {
             id: uuid(),
-            schoolName: 'Londonss',
+            schoolName: 'KingDom university',
             visible: false,
             date: '2021-2020',
             location: 'Ga, lake city',
@@ -47,11 +46,13 @@ export default function CvContainer() {
     const [workData, setWorkData] = useState([
         {
             id: uuid(),
-            companyName: 'LLc',
+            companyName: 'company LLC',
             visible: false,
             date: '2021-2020',
             location: 'Ga, lake city',
-            position: 'Associate',
+            position: 'manager',
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+
         },
         {
             id: uuid(),
@@ -59,7 +60,8 @@ export default function CvContainer() {
             visible: false,
             date: '2021-2020',
             location: 'Ga, lake city',
-            position: 'Bachelor',
+            position: 'sale staff',
+            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
         },
     ]);
 
@@ -70,7 +72,6 @@ export default function CvContainer() {
     return (
         <div className="cv-container">
             <div className="side-bar">
-                <NavBar />
                 <PersonalInfor user={user} updateUser={updateUser} />
                 <Education educationData={educationData} updateEducationData={updateEducationData} />
                 <Experience workData={workData} updateWorkData={updateWorkData} />

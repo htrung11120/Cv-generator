@@ -24,6 +24,8 @@ export default function WorkEditForm({ changeShowform, workData, updateWorkData 
             date: data.date,
             location: data.location,
             position: data.position,
+            description:data.description
+
         };
 
         const updatedWorkData = [...workData, newData];
@@ -36,6 +38,8 @@ export default function WorkEditForm({ changeShowform, workData, updateWorkData 
             date: '',
             location: '',
             position: '',
+            description: ''
+
         });
         changeShowform(false);
     };
@@ -47,6 +51,7 @@ export default function WorkEditForm({ changeShowform, workData, updateWorkData 
             date: '',
             location: '',
             position: '',
+            description: ''
         });
         changeShowform(false);
     };
@@ -118,6 +123,7 @@ export default function WorkEditForm({ changeShowform, workData, updateWorkData 
                     onChange={handleInputChange}
                 />
             </div>
+           
             <div className="form-btns">
                 <div className="side-btns">
                     <p className="Cancel-btn" onClick={handleCancelClick}>Cancel</p>

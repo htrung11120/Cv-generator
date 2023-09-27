@@ -17,8 +17,9 @@
     gap: 12px;
 
     .icon {
-        width: 40px;
-        height: 50px;
+        height: 20px;
+        width: 20px;
+        align-self: center;
     }
 }
 
@@ -33,10 +34,17 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: fit-content;
+
+        .btn {
+            border: none;
+            background-color: transparent;
+        }
     }
 
 
 }
+
 
 
 .add-work {
@@ -67,8 +75,7 @@
     flex-direction: row;
 }
 
-input,
-.input {
+input {
     width: 100%;
     width: 500px;
     border-radius: 10px;

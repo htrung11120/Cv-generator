@@ -14,10 +14,9 @@ export default function Work({ workData, updateWorkData }) {
                         <div className="name-position">
                             <h3 className="work-company-name">{work.companyName}</h3>
                             <p className="position">{work.position}</p>
-                        </div>
-                        <div className="description">
                             <p className="description-text">{work.description}</p>
                         </div>
+
                     </li>
                 ))}
             </ul>

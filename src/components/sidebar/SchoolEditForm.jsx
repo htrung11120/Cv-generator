@@ -62,7 +62,6 @@ export default function SchoolEditForm({ changeShowform, educationData, updateEd
                 </label>
                 <input
                     type="text"
-                    {...register("schoolName", { required: true, maxLength: 5 })}
                     className="school input"
                     id="school"
                     name="schoolName"

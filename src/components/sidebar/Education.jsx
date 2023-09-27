@@ -18,7 +18,7 @@ export default function Education({ educationData, updateEducationData }) {
             <div className="education-header">
                 <div className="header-content">
                     <img src={educationIcon} alt="" className="icon" />
-                    <h1>Education</h1>
+                    <h3>Education</h3>
                 </div>
                 <div className="arrow">
                     <img src={arrow} alt="Toggle" onClick={changeArrow} />

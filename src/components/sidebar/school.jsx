@@ -29,7 +29,7 @@ export default function School({ educationData, updateEducationData }) {
                     <ul className="school-list">
                         {educationData.map((school) => (
                             <li key={school.id} className="school-item">
-                                <h2 className="school-name">{school.schoolName}</h2>
+                                <h3 className="school-name">{school.schoolName}</h3>
                                 <img
                                     src={trashCan}
                                     className="delete-icon"

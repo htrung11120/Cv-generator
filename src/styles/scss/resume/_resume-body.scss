@@ -22,7 +22,7 @@
             padding: 0;
             gap: 60px;
 
-        
+
         }
     }
 
@@ -38,20 +38,29 @@
 
         .work-infor-list {
             display: flex;
-            flex-direction: row;
-            align-items: center;
+            flex-direction: column;
             list-style-type: none;
             gap: 60px;
             padding: 0;
+
+            .work-list-item {
+                display: flex;
+                flex-direction: row;
+                gap: 50px;
+            
+                .name-position{
+                    width: 600px;
+                }
+            }
 
         }
     }
 
 }
 
-.school-list-item{
+.school-list-item {
     display: flex;
-    flex-direction: row ;
+    flex-direction: row;
     justify-content: flex-start;
     gap: 50px;
 }
