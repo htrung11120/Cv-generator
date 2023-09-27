@@ -4,7 +4,7 @@ import upIcon from '../assets/arrow-up.svg';
 import downIcon from '../assets/arrow-down.svg';
 import School from './school';
 
-export default function Education() {
+export default function Education({ educationData, updateEducationData }) {
     const [isCollapse, setIsCollapse] = useState(false);
     const [arrow, setArrow] = useState(upIcon);
 
@@ -17,14 +17,14 @@ export default function Education() {
         <div className="education">
             <div className="education-header">
                 <div className="header-content">
-                    <img src={educationIcon} alt="" className='icon' />
+                    <img src={educationIcon} alt="" className="icon" />
                     <h1>Education</h1>
                 </div>
                 <div className="arrow">
                     <img src={arrow} alt="Toggle" onClick={changeArrow} />
                 </div>
             </div>
-            {isCollapse && <School />}
+            {isCollapse && <School educationData={educationData} updateEducationData={updateEducationData} />}
         </div>
-    )
+    );
 }

@@ -1,23 +1,17 @@
 import React, { useState } from 'react';
-import { v4 as uuid } from 'uuid';
 import visibilityIcon from '../assets/visibility.svg';
 import invisibilityIcon from '../assets/invisibility.svg';
 import WorkEditForm from './WorkEditForm';
 
-export default function Work() {
-    const [workList, setWorkList] = useState([
-        { id: uuid(), companyName: 'LLc', visible: false },
-        { id: uuid(), companyName: 'apple LLC', visible: false },
-    ]);
+export default function Work({ workData, updateWorkData }) {
 
     const [showForm, setShowForm] = useState(false);
 
     const toggleVisibility = (id) => {
-        setWorkList((prevWorkList) =>
-            prevWorkList.map((work) =>
-                work.id === id ? { ...work, visible: !work.visible } : work
-            )
+        const updatedWorkData = workData.map((work) =>
+            work.id === id ? { ...work, visible: !work.visible } : work
         );
+        updateWorkData(updatedWorkData);
     };
 
     const handleFormToggle = () => {
@@ -27,11 +21,11 @@ export default function Work() {
     return (
         <div>
             {showForm ? (
-                <WorkEditForm changeShowform={handleFormToggle} cancel={!showForm} />
+                <WorkEditForm changeShowform={handleFormToggle} workData={workData} updateWorkData={updateWorkData} cancel={!showForm} />
             ) : (
                 <>
                     <ul className="work-list">
-                        {workList.map((work) => (
+                        {workData.map((work) => (
                             <li key={work.id} className="work-item">
                                 <h2 className="work-name">{work.companyName}</h2>
                                 <img
@@ -43,7 +37,7 @@ export default function Work() {
                         ))}
                     </ul>
                     {!showForm && (
-                        <button className="add-work"  onClick={handleFormToggle}>
+                        <button className="add-work" onClick={handleFormToggle}>
                             + Work Experience
                         </button>
                     )}

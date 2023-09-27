@@ -1,23 +1,14 @@
 import React, { useState } from 'react';
-import { v4 as uuid } from 'uuid';
-import visibilityIcon from '../assets/visibility.svg';
-import invisibilityIcon from '../assets/invisibility.svg';
 import SchoolEditForm from './SchoolEditForm';
+import trashCan from '../assets/delete.svg';
 
-export default function School() {
-    const [schoolList, setSchoolList] = useState([
-        { id: uuid(), schoolName: 'London', visible: false },
-        { id: uuid(), schoolName: 'Georgia', visible: false },
-    ]);
-
+export default function School({ educationData, updateEducationData }) {
     const [showForm, setShowForm] = useState(false);
 
-    const toggleVisibility = (id) => {
-        setSchoolList((prevSchoolList) =>
-            prevSchoolList.map((school) =>
-                school.id === id ? { ...school, visible: !school.visible } : school
-            )
-        );
+    const handleDeleteClick = (id) => {
+        // Filter out the school with the given id to delete it
+        const updatedEducationData = educationData.filter((school) => school.id !== id);
+        updateEducationData(updatedEducationData);
     };
 
     const handleFormToggle = () => {
@@ -27,17 +18,23 @@ export default function School() {
     return (
         <div>
             {showForm ? (
-                <SchoolEditForm changeShowform={handleFormToggle} cancel={!showForm} />
+                <SchoolEditForm
+                    changeShowform={handleFormToggle}
+                    educationData={educationData}
+                    updateEducationData={updateEducationData}
+                    cancel={!showForm}
+                />
             ) : (
                 <>
                     <ul className="school-list">
-                        {schoolList.map((school) => (
+                        {educationData.map((school) => (
                             <li key={school.id} className="school-item">
                                 <h2 className="school-name">{school.schoolName}</h2>
                                 <img
-                                    src={school.visible ? visibilityIcon : invisibilityIcon}
-                                    onClick={() => toggleVisibility(school.id)}
-                                    alt="Toggle Visibility"
+                                    src={trashCan}
+                                    className="delete-icon"
+                                    onClick={() => handleDeleteClick(school.id)} // Call handleDeleteClick when trash can is clicked
+                                    alt="Delete School"
                                 />
                             </li>
                         ))}

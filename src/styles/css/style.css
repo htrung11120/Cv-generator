@@ -315,8 +315,7 @@ input,
 }
 .resume-body .resume-education .school-infor-list {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   list-style-type: none;
   padding: 0;
   gap: 60px;
@@ -338,12 +337,11 @@ input,
   padding: 0;
 }
 
-.school-list-item,
-.work-list-item {
+.school-list-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
-  gap: 5px;
+  gap: 50px;
 }
 
 .resume-page {

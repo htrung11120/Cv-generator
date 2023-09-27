@@ -3,10 +3,9 @@ import workIcon from '../assets/work.svg';
 import upIcon from '../assets/arrow-up.svg';
 import downIcon from '../assets/arrow-down.svg';
 import Work from './work';
-export default function Experience() {
+export default function Experience({ workData, updateWorkData }) {
     const [isCollapse, setIsCollapse] = useState(false);
     const [arrow, setArrow] = useState(upIcon);
-
     const changeArrow = () => {
         setIsCollapse((prevState) => !prevState);
         setArrow((prevArrow) => (prevArrow === upIcon ? downIcon : upIcon));
@@ -23,7 +22,7 @@ export default function Experience() {
                     <img src={arrow} alt="Toggle" onClick={changeArrow} />
                 </div>
             </div>
-            {isCollapse && <Work />}
+            {isCollapse && <Work workData={workData} updateWorkData={updateWorkData} />}
         </div>
     )
 }
